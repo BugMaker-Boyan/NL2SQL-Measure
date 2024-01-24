@@ -1,0 +1,8 @@
+,Method,GPT Type,Average Input Tokens,Average Output Tokens,Average Total Tokens,Average Cost,Execution Accuracy
+0,ChatGPT,gpt-3.5-turbo,158.33,39.6,197.93,0.00024,70.1
+1,C3-SQL,gpt-3.5-turbo,1061.73,4640.33,5702.07,0.01034,82.0
+2,DIN-SQL,gpt-4,9181.0,389.8,9570.8,0.29882,82.8
+3,DAIL-SQL,gpt-4,898.73,31.07,929.8,0.02883,83.1
+4,DAIL-SQL-SC,gpt-4,867.47,195.2,1062.67,0.03774,83.6
+5,HyperSQL,gpt-4,687.2,40.73,727.93,0.02306,85.9
+6,HyperSQL-SC,gpt-4,703.2,238.6,941.8,0.03541,87.0

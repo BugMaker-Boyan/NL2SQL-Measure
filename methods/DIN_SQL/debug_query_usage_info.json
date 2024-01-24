@@ -1,0 +1,212 @@
+[
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable museum, columns = [*,Museum_ID,Name,Num_of_Staff,Open_Year]\nTable visit, columns = [*,Museum_ID,visitor_ID,Num_of_Ticket,Total_spent]\nTable visitor, columns = [*,ID,Name,Level_of_membership,Age]\nForeign_keys = [visit.visitor_ID = visitor.ID,visit.Museum_ID = museum.Museum_ID]\nPrimary_keys = [museum.Museum_ID,visitor.ID,visit.Museum_ID]\n#### Question: What is the name of the visitor who visited both a museum opened before 2009 and a museum opened after 2011?\n#### SQLite SQL QUERY\nSELECT T1.Name FROM visitor AS T1 JOIN visit AS T2 ON T1.ID  =  T2.visitor_ID JOIN museum AS T3 ON T2.Museum_ID  =  T3.Museum_ID WHERE T3.Open_Year  <  2009 INTERSECT SELECT T1.Name FROM visitor AS T1 JOIN visit AS T2 ON T1.ID  =  T2.visitor_ID JOIN museum AS T3 ON T2.Museum_ID  =  T3.Museum_ID WHERE T3.Open_Year  >  2011\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "T1.Name FROM visitor AS T1 JOIN visit AS T2 ON T1.ID  =  T2.visitor_ID JOIN museum AS T3 ON T2.Museum_ID  =  T3.Museum_ID WHERE T3.Open_Year  <  2009 INTERSECT SELECT T1.Name FROM visitor AS T1 JOIN visit AS T2 ON T1.ID  =  T2.visitor_ID JOIN museum AS T3 ON T2.Museum_ID  =  T3.Museum_ID WHERE T3.Open_Year  >  2011"
+    ],
+    "prompt_tokens": 433,
+    "completion_tokens": 116,
+    "total_tokens": 549
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Cartoon, columns = [*,id,Title,Directed_by,Written_by,Original_air_date,Production_code,Channel]\nTable TV_Channel, columns = [*,id,series_name,Country,Language,Content,Pixel_aspect_ratio_PAR,Hight_definition_TV,Pay_per_view_PPV,Package_Option]\nTable TV_series, columns = [*,id,Episode,Air_Date,Rating,Share,18_49_Rating_Share,Viewers_m,Weekly_Rank,Channel]\nForeign_keys = [TV_series.Channel = TV_Channel.id,Cartoon.Channel = TV_Channel.id]\nPrimary_keys = [TV_Channel.id,TV_series.id,Cartoon.id]\n#### Question: What is the TV Channel that shows the cartoon \"The Rise of the Blue Beetle!\"? List the TV Channel's series name.\n#### SQLite SQL QUERY\nSELECT T2.series_name FROM TV_Channel AS T2 JOIN Cartoon AS T1 ON T1.Channel  =  T2.id WHERE T1.Title  =  'The Rise of the Blue Beetle!'\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "T2.series_name FROM TV_Channel AS T2 JOIN Cartoon AS T1 ON T1.Channel  =  T2.id WHERE T1.Title  =  'The Rise of the Blue Beetle!'"
+    ],
+    "prompt_tokens": 391,
+    "completion_tokens": 40,
+    "total_tokens": 431
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Cartoon, columns = [*,id,Title,Directed_by,Written_by,Original_air_date,Production_code,Channel]\nTable TV_Channel, columns = [*,id,series_name,Country,Language,Content,Pixel_aspect_ratio_PAR,Hight_definition_TV,Pay_per_view_PPV,Package_Option]\nTable TV_series, columns = [*,id,Episode,Air_Date,Rating,Share,18_49_Rating_Share,Viewers_m,Weekly_Rank,Channel]\nForeign_keys = [TV_series.Channel = TV_Channel.id,Cartoon.Channel = TV_Channel.id]\nPrimary_keys = [TV_Channel.id,TV_series.id,Cartoon.id]\n#### Question: List the title of all cartoons in alphabetical order.\n#### SQLite SQL QUERY\nSELECT Title FROM Cartoon ORDER BY Title ASC\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "Title FROM Cartoon ORDER BY Title ASC"
+    ],
+    "prompt_tokens": 343,
+    "completion_tokens": 7,
+    "total_tokens": 350
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable car_makers, columns = [*,Id,Maker,FullName,Country]\nTable car_names, columns = [*,MakeId,Model,Make]\nTable cars_data, columns = [*,Id,MPG,Cylinders,Edispl,Horsepower,Weight,Accelerate,Year]\nTable continents, columns = [*,ContId,Continent]\nTable countries, columns = [*,CountryId,CountryName,Continent]\nTable model_list, columns = [*,ModelId,Maker,Model]\nForeign_keys = [countries.Continent = continents.ContId,car_makers.Country = countries.CountryId,model_list.Maker = car_makers.Id,car_names.Model = model_list.Model,cars_data.Id = car_names.MakeId]\nPrimary_keys = [continents.ContId,countries.CountryId,car_makers.Id,model_list.ModelId,car_names.MakeId,cars_data.Id]\n#### Question: How many car models are produced by each maker ? Only list the count and the maker full name .\n#### SQLite SQL QUERY\nSELECT count(DISTINCT T1.Model) ,  T2.FullName FROM model_list AS T1 JOIN car_makers AS T2 ON T1.Maker  =  T2.Id GROUP BY T2.FullName\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "count(DISTINCT T1.Model) ,  T2.FullName FROM model_list AS T1 JOIN car_makers AS T2 ON T1.Maker  =  T2.Id GROUP BY T2.FullName"
+    ],
+    "prompt_tokens": 435,
+    "completion_tokens": 42,
+    "total_tokens": 477
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable employee, columns = [*,Employee_ID,Name,Age,City]\nTable evaluation, columns = [*,Employee_ID,Year_awarded,Bonus]\nTable hiring, columns = [*,Shop_ID,Employee_ID,Start_from,Is_full_time]\nTable shop, columns = [*,Shop_ID,Name,Location,District,Number_products,Manager_name]\nForeign_keys = [hiring.Employee_ID = employee.Employee_ID,hiring.Shop_ID = shop.Shop_ID,evaluation.Employee_ID = employee.Employee_ID]\nPrimary_keys = [employee.Employee_ID,shop.Shop_ID,hiring.Employee_ID,evaluation.Employee_ID]\n#### Question: Which employee received the most awards in evaluations? Give me the employee name.\n#### SQLite SQL QUERY\nSELECT T2.Name FROM evaluation AS T1 JOIN employee AS T2 ON T1.Employee_ID  =  T2.Employee_ID GROUP BY T2.Name ORDER BY count(*) DESC LIMIT 1\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "T2.Name FROM evaluation AS T1 JOIN employee AS T2 ON T1.Employee_ID  =  T2.Employee_ID GROUP BY T2.Name ORDER BY count(*) DESC LIMIT 1"
+    ],
+    "prompt_tokens": 368,
+    "completion_tokens": 38,
+    "total_tokens": 406
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable matches, columns = [*,best_of,draw_size,loser_age,loser_entry,loser_hand,loser_ht,loser_id,loser_ioc,loser_name,loser_rank,loser_rank_points,loser_seed,match_num,minutes,round,score,surface,tourney_date,tourney_id,tourney_level,tourney_name,winner_age,winner_entry,winner_hand,winner_ht,winner_id,winner_ioc,winner_name,winner_rank,winner_rank_points,winner_seed,year]\nTable players, columns = [*,player_id,first_name,last_name,hand,birth_date,country_code]\nTable rankings, columns = [*,ranking_date,ranking,player_id,ranking_points,tours]\nForeign_keys = [matches.winner_id = players.player_id,matches.loser_id = players.player_id,rankings.player_id = players.player_id]\nPrimary_keys = [players.player_id]\n#### Question: What are the names of players who won in both 2013 and 2016?\n#### SQLite SQL QUERY\nSELECT T1.first_name, T1.last_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.winner_id WHERE T2.year = 2013 INTERSECT SELECT T1.first_name, T1.last_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.winner_id WHERE T2.year = 2016\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "T1.first_name, T1.last_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.winner_id WHERE T2.year = 2013 INTERSECT SELECT T1.first_name, T1.last_name FROM players AS T1 JOIN matches AS T2 ON T1.player_id = T2.winner_id WHERE T2.year = 2016"
+    ],
+    "prompt_tokens": 471,
+    "completion_tokens": 80,
+    "total_tokens": 551
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable car_makers, columns = [*,Id,Maker,FullName,Country]\nTable car_names, columns = [*,MakeId,Model,Make]\nTable cars_data, columns = [*,Id,MPG,Cylinders,Edispl,Horsepower,Weight,Accelerate,Year]\nTable continents, columns = [*,ContId,Continent]\nTable countries, columns = [*,CountryId,CountryName,Continent]\nTable model_list, columns = [*,ModelId,Maker,Model]\nForeign_keys = [countries.Continent = continents.ContId,car_makers.Country = countries.CountryId,model_list.Maker = car_makers.Id,car_names.Model = model_list.Model,cars_data.Id = car_names.MakeId]\nPrimary_keys = [continents.ContId,countries.CountryId,car_makers.Id,model_list.ModelId,car_names.MakeId,cars_data.Id]\n#### Question: What is the number of carsw ith over 6 cylinders?\n#### SQLite SQL QUERY\nSELECT COUNT(*) FROM cars_data WHERE Cylinders > 6\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "COUNT(*) FROM cars_data WHERE Cylinders > 6"
+    ],
+    "prompt_tokens": 398,
+    "completion_tokens": 12,
+    "total_tokens": 410
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable concert, columns = [*,concert_ID,concert_Name,Theme,Stadium_ID,Year]\nTable singer, columns = [*,Singer_ID,Name,Country,Song_Name,Song_release_year,Age,Is_male]\nTable singer_in_concert, columns = [*,concert_ID,Singer_ID]\nTable stadium, columns = [*,Stadium_ID,Location,Name,Capacity,Highest,Lowest,Average]\nForeign_keys = [concert.Stadium_ID = stadium.Stadium_ID,singer_in_concert.Singer_ID = singer.Singer_ID,singer_in_concert.concert_ID = concert.concert_ID]\nPrimary_keys = [stadium.Stadium_ID,singer.Singer_ID,concert.concert_ID,singer_in_concert.concert_ID]\n#### Question: What is the average, minimum, and maximum age of all singers from France?\n#### SQLite SQL QUERY\nSELECT AVG(Age), MIN(Age), MAX(Age) FROM singer WHERE Country = 'France'\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "AVG(Age), MIN(Age), MAX(Age) FROM singer WHERE Country = 'France'"
+    ],
+    "prompt_tokens": 381,
+    "completion_tokens": 21,
+    "total_tokens": 402
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable people, columns = [*,People_ID,Nationality,Name,Birth_Date,Height]\nTable poker_player, columns = [*,Poker_Player_ID,People_ID,Final_Table_Made,Best_Finish,Money_Rank,Earnings]\nForeign_keys = [poker_player.People_ID = people.People_ID]\nPrimary_keys = [poker_player.Poker_Player_ID,people.People_ID]\n#### Question: How many people are there of each nationality?\n#### SQLite SQL QUERY\nSELECT COUNT(*) ,  Nationality FROM people GROUP BY Nationality\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "COUNT(*) ,  Nationality FROM people GROUP BY Nationality"
+    ],
+    "prompt_tokens": 294,
+    "completion_tokens": 12,
+    "total_tokens": 306
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details]\nTable Courses, columns = [*,course_id,course_name,course_description,other_details]\nTable Degree_Programs, columns = [*,degree_program_id,department_id,degree_summary_name,degree_summary_description,other_details]\nTable Departments, columns = [*,department_id,department_name,department_description,other_details]\nTable Sections, columns = [*,section_id,course_id,section_name,section_description,other_details]\nTable Semesters, columns = [*,semester_id,semester_name,semester_description,other_details]\nTable Student_Enrolment, columns = [*,student_enrolment_id,degree_program_id,semester_id,student_id,other_details]\nTable Student_Enrolment_Courses, columns = [*,student_course_id,course_id,student_enrolment_id]\nTable Students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details]\nTable Transcript_Contents, columns = [*,student_course_id,transcript_id]\nTable Transcripts, columns = [*,transcript_id,transcript_date,other_details]\nForeign_keys = [Degree_Programs.department_id = Departments.department_id,Sections.course_id = Courses.course_id,Students.permanent_address_id = Addresses.address_id,Students.current_address_id = Addresses.address_id,Student_Enrolment.student_id = Students.student_id,Student_Enrolment.semester_id = Semesters.semester_id,Student_Enrolment.degree_program_id = Degree_Programs.degree_program_id,Student_Enrolment_Courses.student_enrolment_id = Student_Enrolment.student_enrolment_id,Student_Enrolment_Courses.course_id = Courses.course_id,Transcript_Contents.transcript_id = Transcripts.transcript_id,Transcript_Contents.student_course_id = Student_Enrolment_Courses.student_course_id]\nPrimary_keys = [Addresses.address_id,Courses.course_id,Departments.department_id,Degree_Programs.degree_program_id,Sections.section_id,Semesters.semester_id,Students.student_id,Student_Enrolment.student_enrolment_id,Student_Enrolment_Courses.student_course_id,Transcripts.transcript_id]\n#### Question: What is the last transcript release date?\n#### SQLite SQL QUERY\nSELECT MAX(transcript_date) FROM Transcripts\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "MAX(transcript_date) FROM Transcripts"
+    ],
+    "prompt_tokens": 704,
+    "completion_tokens": 8,
+    "total_tokens": 712
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Cartoon, columns = [*,id,Title,Directed_by,Written_by,Original_air_date,Production_code,Channel]\nTable TV_Channel, columns = [*,id,series_name,Country,Language,Content,Pixel_aspect_ratio_PAR,Hight_definition_TV,Pay_per_view_PPV,Package_Option]\nTable TV_series, columns = [*,id,Episode,Air_Date,Rating,Share,18_49_Rating_Share,Viewers_m,Weekly_Rank,Channel]\nForeign_keys = [TV_series.Channel = TV_Channel.id,Cartoon.Channel = TV_Channel.id]\nPrimary_keys = [TV_Channel.id,TV_series.id,Cartoon.id]\n#### Question: What are the countries that have cartoons on TV that were written by Todd Casey?\n#### SQLite SQL QUERY\nSELECT DISTINCT T2.Country FROM Cartoon AS T1 JOIN TV_Channel AS T2 ON T1.Channel = T2.id WHERE T1.Written_by = 'Todd Casey'\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "DISTINCT T2.Country FROM Cartoon AS T1 JOIN TV_Channel AS T2 ON T1.Channel = T2.id WHERE T1.Written_by = 'Todd Casey'"
+    ],
+    "prompt_tokens": 375,
+    "completion_tokens": 35,
+    "total_tokens": 410
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable city, columns = [*,ID,Name,CountryCode,District,Population]\nTable country, columns = [*,Code,Name,Continent,Region,SurfaceArea,IndepYear,Population,LifeExpectancy,GNP,GNPOld,LocalName,GovernmentForm,HeadOfState,Capital,Code2]\nTable countrylanguage, columns = [*,CountryCode,Language,IsOfficial,Percentage]\nTable sqlite_sequence, columns = [*,name,seq]\nForeign_keys = [city.CountryCode = country.Code,countrylanguage.CountryCode = country.Code]\nPrimary_keys = [city.ID,country.Code,countrylanguage.CountryCode]\n#### Question: What is the official language spoken in the country whose head of state is Beatrix?\n#### SQLite SQL QUERY\nSELECT T1.Language FROM countrylanguage AS T1 JOIN country AS T2 ON T1.CountryCode  =  T2.Code WHERE T2.HeadOfState  =  'Beatrix' AND T1.IsOfficial  =  'T'\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "T1.Language \nFROM countrylanguage AS T1 \nJOIN country AS T2 \nON T1.CountryCode  =  T2.Code \nWHERE T2.HeadOfState  =  'Beatrix' \nAND T1.IsOfficial  =  'T'"
+    ],
+    "prompt_tokens": 388,
+    "completion_tokens": 54,
+    "total_tokens": 442
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable city, columns = [*,ID,Name,CountryCode,District,Population]\nTable country, columns = [*,Code,Name,Continent,Region,SurfaceArea,IndepYear,Population,LifeExpectancy,GNP,GNPOld,LocalName,GovernmentForm,HeadOfState,Capital,Code2]\nTable countrylanguage, columns = [*,CountryCode,Language,IsOfficial,Percentage]\nTable sqlite_sequence, columns = [*,name,seq]\nForeign_keys = [city.CountryCode = country.Code,countrylanguage.CountryCode = country.Code]\nPrimary_keys = [city.ID,country.Code,countrylanguage.CountryCode]\n#### Question: What is the number of nations that use English and Dutch?\n#### SQLite SQL QUERY\nSELECT COUNT(DISTINCT CountryCode) FROM countrylanguage WHERE Language IN ('English', 'Dutch')\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "COUNT(DISTINCT CountryCode) FROM countrylanguage WHERE Language IN ('English', 'Dutch')"
+    ],
+    "prompt_tokens": 354,
+    "completion_tokens": 20,
+    "total_tokens": 374
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Breeds, columns = [*,breed_code,breed_name]\nTable Charges, columns = [*,charge_id,charge_type,charge_amount]\nTable Dogs, columns = [*,dog_id,owner_id,abandoned_yn,breed_code,size_code,name,age,date_of_birth,gender,weight,date_arrived,date_adopted,date_departed]\nTable Owners, columns = [*,owner_id,first_name,last_name,street,city,state,zip_code,email_address,home_phone,cell_number]\nTable Professionals, columns = [*,professional_id,role_code,first_name,street,city,state,zip_code,last_name,email_address,home_phone,cell_number]\nTable Sizes, columns = [*,size_code,size_description]\nTable Treatment_Types, columns = [*,treatment_type_code,treatment_type_description]\nTable Treatments, columns = [*,treatment_id,dog_id,professional_id,treatment_type_code,date_of_treatment,cost_of_treatment]\nForeign_keys = [Dogs.owner_id = Owners.owner_id,Dogs.owner_id = Owners.owner_id,Dogs.size_code = Sizes.size_code,Dogs.breed_code = Breeds.breed_code,Treatments.dog_id = Dogs.dog_id,Treatments.professional_id = Professionals.professional_id,Treatments.treatment_type_code = Treatment_Types.treatment_type_code]\nPrimary_keys = [Breeds.breed_code,Charges.charge_id,Sizes.size_code,Treatment_Types.treatment_type_code,Owners.owner_id,Dogs.dog_id,Professionals.professional_id,Treatments.treatment_id]\n#### Question: Which states have both owners and professionals living there?\n#### SQLite SQL QUERY\nSELECT DISTINCT state FROM Owners WHERE state IN (SELECT DISTINCT state FROM Professionals)\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "DISTINCT state FROM Owners WHERE state IN (SELECT DISTINCT state FROM Professionals)"
+    ],
+    "prompt_tokens": 539,
+    "completion_tokens": 15,
+    "total_tokens": 554
+  },
+  {
+    "input": [
+      {
+        "role": "user",
+        "content": "#### For the given question, use the provided tables, columns, foreign keys, and primary keys to fix the given SQLite SQL QUERY for any issues. If there are any problems, fix them. If there are no issues, return the SQLite SQL QUERY as is.\n#### Use the following instructions for fixing the SQL QUERY:\n1) Use the database values that are explicitly mentioned in the question.\n2) Pay attention to the columns that are used for the JOIN by using the Foreign_keys.\n3) Use DESC and DISTINCT when needed.\n4) Pay attention to the columns that are used for the GROUP BY statement.\n5) Pay attention to the columns that are used for the SELECT statement.\n6) Only change the GROUP BY clause when necessary (Avoid redundant columns in GROUP BY).\n7) Use GROUP BY on one column only.\n\nTable Addresses, columns = [*,address_id,line_1,line_2,line_3,city,zip_postcode,state_province_county,country,other_address_details]\nTable Courses, columns = [*,course_id,course_name,course_description,other_details]\nTable Degree_Programs, columns = [*,degree_program_id,department_id,degree_summary_name,degree_summary_description,other_details]\nTable Departments, columns = [*,department_id,department_name,department_description,other_details]\nTable Sections, columns = [*,section_id,course_id,section_name,section_description,other_details]\nTable Semesters, columns = [*,semester_id,semester_name,semester_description,other_details]\nTable Student_Enrolment, columns = [*,student_enrolment_id,degree_program_id,semester_id,student_id,other_details]\nTable Student_Enrolment_Courses, columns = [*,student_course_id,course_id,student_enrolment_id]\nTable Students, columns = [*,student_id,current_address_id,permanent_address_id,first_name,middle_name,last_name,cell_mobile_number,email_address,ssn,date_first_registered,date_left,other_student_details]\nTable Transcript_Contents, columns = [*,student_course_id,transcript_id]\nTable Transcripts, columns = [*,transcript_id,transcript_date,other_details]\nForeign_keys = [Degree_Programs.department_id = Departments.department_id,Sections.course_id = Courses.course_id,Students.permanent_address_id = Addresses.address_id,Students.current_address_id = Addresses.address_id,Student_Enrolment.student_id = Students.student_id,Student_Enrolment.semester_id = Semesters.semester_id,Student_Enrolment.degree_program_id = Degree_Programs.degree_program_id,Student_Enrolment_Courses.student_enrolment_id = Student_Enrolment.student_enrolment_id,Student_Enrolment_Courses.course_id = Courses.course_id,Transcript_Contents.transcript_id = Transcripts.transcript_id,Transcript_Contents.student_course_id = Student_Enrolment_Courses.student_course_id]\nPrimary_keys = [Addresses.address_id,Courses.course_id,Departments.department_id,Degree_Programs.degree_program_id,Sections.section_id,Semesters.semester_id,Students.student_id,Student_Enrolment.student_enrolment_id,Student_Enrolment_Courses.student_course_id,Transcripts.transcript_id]\n#### Question: What is the id of the semester that had both Masters and Bachelors students enrolled?\n#### SQLite SQL QUERY\nSELECT semester_id FROM Student_Enrolment WHERE degree_program_id = 'Masters' INTERSECT SELECT semester_id FROM Student_Enrolment WHERE degree_program_id = 'Bachelors'\n#### SQLite FIXED SQL QUERY\nSELECT"
+      }
+    ],
+    "output": [
+      "semester_id FROM Student_Enrolment \nJOIN Degree_Programs ON Student_Enrolment.degree_program_id = Degree_Programs.degree_program_id \nWHERE degree_summary_name = 'Masters' \nINTERSECT \nSELECT semester_id FROM Student_Enrolment \nJOIN Degree_Programs ON Student_Enrolment.degree_program_id = Degree_Programs.degree_program_id \nWHERE degree_summary_name = 'Bachelors'"
+    ],
+    "prompt_tokens": 744,
+    "completion_tokens": 85,
+    "total_tokens": 829
+  }
+]

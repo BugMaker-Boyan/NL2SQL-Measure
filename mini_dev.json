@@ -1,0 +1,2558 @@
+[
+    {
+        "db_id": "museum_visit",
+        "query": "SELECT t1.name FROM visitor AS t1 JOIN visit AS t2 ON t1.id  =  t2.visitor_id JOIN museum AS t3 ON t3.Museum_ID  =  t2.Museum_ID WHERE t3.open_year  <  2009 INTERSECT SELECT t1.name FROM visitor AS t1 JOIN visit AS t2 ON t1.id  =  t2.visitor_id JOIN museum AS t3 ON t3.Museum_ID  =  t2.Museum_ID WHERE t3.open_year  >  2011",
+        "query_toks": [
+            "SELECT",
+            "t1.name",
+            "FROM",
+            "visitor",
+            "AS",
+            "t1",
+            "JOIN",
+            "visit",
+            "AS",
+            "t2",
+            "ON",
+            "t1.id",
+            "=",
+            "t2.visitor_id",
+            "JOIN",
+            "museum",
+            "AS",
+            "t3",
+            "ON",
+            "t3.Museum_ID",
+            "=",
+            "t2.Museum_ID",
+            "WHERE",
+            "t3.open_year",
+            "<",
+            "2009",
+            "INTERSECT",
+            "SELECT",
+            "t1.name",
+            "FROM",
+            "visitor",
+            "AS",
+            "t1",
+            "JOIN",
+            "visit",
+            "AS",
+            "t2",
+            "ON",
+            "t1.id",
+            "=",
+            "t2.visitor_id",
+            "JOIN",
+            "museum",
+            "AS",
+            "t3",
+            "ON",
+            "t3.Museum_ID",
+            "=",
+            "t2.Museum_ID",
+            "WHERE",
+            "t3.open_year",
+            ">",
+            "2011"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "t1",
+            ".",
+            "name",
+            "from",
+            "visitor",
+            "as",
+            "t1",
+            "join",
+            "visit",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "id",
+            "=",
+            "t2",
+            ".",
+            "visitor_id",
+            "join",
+            "museum",
+            "as",
+            "t3",
+            "on",
+            "t3",
+            ".",
+            "museum_id",
+            "=",
+            "t2",
+            ".",
+            "museum_id",
+            "where",
+            "t3",
+            ".",
+            "open_year",
+            "<",
+            "value",
+            "intersect",
+            "select",
+            "t1",
+            ".",
+            "name",
+            "from",
+            "visitor",
+            "as",
+            "t1",
+            "join",
+            "visit",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "id",
+            "=",
+            "t2",
+            ".",
+            "visitor_id",
+            "join",
+            "museum",
+            "as",
+            "t3",
+            "on",
+            "t3",
+            ".",
+            "museum_id",
+            "=",
+            "t2",
+            ".",
+            "museum_id",
+            "where",
+            "t3",
+            ".",
+            "open_year",
+            ">",
+            "value"
+        ],
+        "question": "What is the name of the visitor who visited both a museum opened before 2009 and a museum opened after 2011?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "name",
+            "of",
+            "the",
+            "visitor",
+            "who",
+            "visited",
+            "both",
+            "a",
+            "museum",
+            "opened",
+            "before",
+            "2009",
+            "and",
+            "a",
+            "museum",
+            "opened",
+            "after",
+            "2011",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        0
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                5,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "and",
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            9,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                6,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    4,
+                    [
+                        0,
+                        [
+                            0,
+                            4,
+                            false
+                        ],
+                        null
+                    ],
+                    2009.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            1
+                        ],
+                        [
+                            "table_unit",
+                            2
+                        ],
+                        [
+                            "table_unit",
+                            0
+                        ]
+                    ],
+                    "conds": [
+                        [
+                            false,
+                            2,
+                            [
+                                0,
+                                [
+                                    0,
+                                    5,
+                                    false
+                                ],
+                                null
+                            ],
+                            [
+                                0,
+                                10,
+                                false
+                            ],
+                            null
+                        ],
+                        "and",
+                        [
+                            false,
+                            2,
+                            [
+                                0,
+                                [
+                                    0,
+                                    1,
+                                    false
+                                ],
+                                null
+                            ],
+                            [
+                                0,
+                                9,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    6,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                4,
+                                false
+                            ],
+                            null
+                        ],
+                        2011.0,
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "tvshow",
+        "query": "SELECT T1.series_name FROM TV_Channel AS T1 JOIN Cartoon AS T2 ON T1.id = T2.Channel WHERE T2.Title = \"The Rise of the Blue Beetle!\";",
+        "query_toks": [
+            "SELECT",
+            "T1.series_name",
+            "FROM",
+            "TV_Channel",
+            "AS",
+            "T1",
+            "JOIN",
+            "Cartoon",
+            "AS",
+            "T2",
+            "ON",
+            "T1.id",
+            "=",
+            "T2.Channel",
+            "WHERE",
+            "T2.Title",
+            "=",
+            "``",
+            "The",
+            "Rise",
+            "of",
+            "the",
+            "Blue",
+            "Beetle",
+            "!",
+            "``",
+            ";"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "t1",
+            ".",
+            "series_name",
+            "from",
+            "tv_channel",
+            "as",
+            "t1",
+            "join",
+            "cartoon",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "id",
+            "=",
+            "t2",
+            ".",
+            "channel",
+            "where",
+            "t2",
+            ".",
+            "title",
+            "=",
+            "value"
+        ],
+        "question": "What is the TV Channel that shows the cartoon \"The Rise of the Blue Beetle!\"? List the TV Channel's series name.",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "TV",
+            "Channel",
+            "that",
+            "shows",
+            "the",
+            "cartoon",
+            "``",
+            "The",
+            "Rise",
+            "of",
+            "the",
+            "Blue",
+            "Beetle",
+            "!",
+            "''",
+            "?",
+            "List",
+            "the",
+            "TV",
+            "Channel",
+            "'s",
+            "series",
+            "name",
+            "."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            25,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"The Rise of the Blue Beetle!\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "tvshow",
+        "query": "SELECT Title FROM Cartoon ORDER BY title",
+        "query_toks": [
+            "SELECT",
+            "Title",
+            "FROM",
+            "Cartoon",
+            "ORDER",
+            "BY",
+            "title"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "title",
+            "from",
+            "cartoon",
+            "order",
+            "by",
+            "title"
+        ],
+        "question": "List the title of all cartoons in alphabetical order.",
+        "question_toks": [
+            "List",
+            "the",
+            "title",
+            "of",
+            "all",
+            "cartoons",
+            "in",
+            "alphabetical",
+            "order",
+            "."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "asc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "car_1",
+        "query": "select count(*) ,  t2.fullname from model_list as t1 join car_makers as t2 on t1.maker  =  t2.id group by t2.id;",
+        "query_toks": [
+            "select",
+            "count",
+            "(",
+            "*",
+            ")",
+            ",",
+            "t2.fullname",
+            "from",
+            "model_list",
+            "as",
+            "t1",
+            "join",
+            "car_makers",
+            "as",
+            "t2",
+            "on",
+            "t1.maker",
+            "=",
+            "t2.id",
+            "group",
+            "by",
+            "t2.id",
+            ";"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "count",
+            "(",
+            "*",
+            ")",
+            ",",
+            "t2",
+            ".",
+            "fullname",
+            "from",
+            "model_list",
+            "as",
+            "t1",
+            "join",
+            "car_makers",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "maker",
+            "=",
+            "t2",
+            ".",
+            "id",
+            "group",
+            "by",
+            "t2",
+            ".",
+            "id"
+        ],
+        "question": "How many car models are produced by each maker ? Only list the count and the maker full name .",
+        "question_toks": [
+            "How",
+            "many",
+            "car",
+            "models",
+            "are",
+            "produced",
+            "by",
+            "each",
+            "maker",
+            "?",
+            "Only",
+            "list",
+            "the",
+            "count",
+            "and",
+            "the",
+            "maker",
+            "full",
+            "name",
+            "."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                11,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            6,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    6,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "employee_hire_evaluation",
+        "query": "SELECT t1.name FROM employee AS t1 JOIN evaluation AS t2 ON t1.Employee_ID  =  t2.Employee_ID GROUP BY t2.Employee_ID ORDER BY count(*) DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "t1.name",
+            "FROM",
+            "employee",
+            "AS",
+            "t1",
+            "JOIN",
+            "evaluation",
+            "AS",
+            "t2",
+            "ON",
+            "t1.Employee_ID",
+            "=",
+            "t2.Employee_ID",
+            "GROUP",
+            "BY",
+            "t2.Employee_ID",
+            "ORDER",
+            "BY",
+            "count",
+            "(",
+            "*",
+            ")",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "t1",
+            ".",
+            "name",
+            "from",
+            "employee",
+            "as",
+            "t1",
+            "join",
+            "evaluation",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "employee_id",
+            "=",
+            "t2",
+            ".",
+            "employee_id",
+            "group",
+            "by",
+            "t2",
+            ".",
+            "employee_id",
+            "order",
+            "by",
+            "count",
+            "(",
+            "*",
+            ")",
+            "desc",
+            "limit",
+            "value"
+        ],
+        "question": "Which employee received the most awards in evaluations? Give me the employee name.",
+        "question_toks": [
+            "Which",
+            "employee",
+            "received",
+            "the",
+            "most",
+            "awards",
+            "in",
+            "evaluations",
+            "?",
+            "Give",
+            "me",
+            "the",
+            "employee",
+            "name",
+            "."
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            15,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                2,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    15,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            3,
+                            0,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "wta_1",
+        "query": "SELECT winner_name FROM matches WHERE YEAR  =  2013 INTERSECT SELECT winner_name FROM matches WHERE YEAR  =  2016",
+        "query_toks": [
+            "SELECT",
+            "winner_name",
+            "FROM",
+            "matches",
+            "WHERE",
+            "YEAR",
+            "=",
+            "2013",
+            "INTERSECT",
+            "SELECT",
+            "winner_name",
+            "FROM",
+            "matches",
+            "WHERE",
+            "YEAR",
+            "=",
+            "2016"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "winner_name",
+            "from",
+            "matches",
+            "where",
+            "year",
+            "=",
+            "value",
+            "intersect",
+            "select",
+            "winner_name",
+            "from",
+            "matches",
+            "where",
+            "year",
+            "=",
+            "value"
+        ],
+        "question": "What are the names of players who won in both 2013 and 2016?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "names",
+            "of",
+            "players",
+            "who",
+            "won",
+            "in",
+            "both",
+            "2013",
+            "and",
+            "2016",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                34,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            38,
+                            false
+                        ],
+                        null
+                    ],
+                    2013.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            1
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    34,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                38,
+                                false
+                            ],
+                            null
+                        ],
+                        2016.0,
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "car_1",
+        "query": "SELECT COUNT(*) FROM CARS_DATA WHERE Cylinders  >  6;",
+        "query_toks": [
+            "SELECT",
+            "COUNT",
+            "(",
+            "*",
+            ")",
+            "FROM",
+            "CARS_DATA",
+            "WHERE",
+            "Cylinders",
+            ">",
+            "6",
+            ";"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "count",
+            "(",
+            "*",
+            ")",
+            "from",
+            "cars_data",
+            "where",
+            "cylinders",
+            ">",
+            "value"
+        ],
+        "question": "What is the number of carsw ith over 6 cylinders?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "number",
+            "of",
+            "carsw",
+            "ith",
+            "over",
+            "6",
+            "cylinders",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        5
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    3,
+                    [
+                        0,
+                        [
+                            0,
+                            18,
+                            false
+                        ],
+                        null
+                    ],
+                    6.0,
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "concert_singer",
+        "query": "SELECT avg(age) ,  min(age) ,  max(age) FROM singer WHERE country  =  'France'",
+        "query_toks": [
+            "SELECT",
+            "avg",
+            "(",
+            "age",
+            ")",
+            ",",
+            "min",
+            "(",
+            "age",
+            ")",
+            ",",
+            "max",
+            "(",
+            "age",
+            ")",
+            "FROM",
+            "singer",
+            "WHERE",
+            "country",
+            "=",
+            "'France",
+            "'"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "avg",
+            "(",
+            "age",
+            ")",
+            ",",
+            "min",
+            "(",
+            "age",
+            ")",
+            ",",
+            "max",
+            "(",
+            "age",
+            ")",
+            "from",
+            "singer",
+            "where",
+            "country",
+            "=",
+            "value"
+        ],
+        "question": "What is the average, minimum, and maximum age of all singers from France?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "average",
+            ",",
+            "minimum",
+            ",",
+            "and",
+            "maximum",
+            "age",
+            "of",
+            "all",
+            "singers",
+            "from",
+            "France",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        5,
+                        [
+                            0,
+                            [
+                                0,
+                                13,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                13,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        1,
+                        [
+                            0,
+                            [
+                                0,
+                                13,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            10,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"France\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "poker_player",
+        "query": "SELECT Nationality ,  COUNT(*) FROM people GROUP BY Nationality",
+        "query_toks": [
+            "SELECT",
+            "Nationality",
+            ",",
+            "COUNT",
+            "(",
+            "*",
+            ")",
+            "FROM",
+            "people",
+            "GROUP",
+            "BY",
+            "Nationality"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "nationality",
+            ",",
+            "count",
+            "(",
+            "*",
+            ")",
+            "from",
+            "people",
+            "group",
+            "by",
+            "nationality"
+        ],
+        "question": "How many people are there of each nationality?",
+        "question_toks": [
+            "How",
+            "many",
+            "people",
+            "are",
+            "there",
+            "of",
+            "each",
+            "nationality",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        1
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ]
+                    ],
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [
+                [
+                    0,
+                    8,
+                    false
+                ]
+            ],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "student_transcripts_tracking",
+        "query": "SELECT transcript_date FROM Transcripts ORDER BY transcript_date DESC LIMIT 1",
+        "query_toks": [
+            "SELECT",
+            "transcript_date",
+            "FROM",
+            "Transcripts",
+            "ORDER",
+            "BY",
+            "transcript_date",
+            "DESC",
+            "LIMIT",
+            "1"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "transcript_date",
+            "from",
+            "transcripts",
+            "order",
+            "by",
+            "transcript_date",
+            "desc",
+            "limit",
+            "value"
+        ],
+        "question": "What is the last transcript release date?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "last",
+            "transcript",
+            "release",
+            "date",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        9
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                53,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [
+                "desc",
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            53,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            ],
+            "limit": 1,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "tvshow",
+        "query": "SELECT T1.country FROM TV_Channel AS T1 JOIN cartoon AS T2 ON T1.id = T2.Channel WHERE T2.written_by  =  'Todd Casey'",
+        "query_toks": [
+            "SELECT",
+            "T1.country",
+            "FROM",
+            "TV_Channel",
+            "AS",
+            "T1",
+            "JOIN",
+            "cartoon",
+            "AS",
+            "T2",
+            "ON",
+            "T1.id",
+            "=",
+            "T2.Channel",
+            "WHERE",
+            "T2.written_by",
+            "=",
+            "'Todd",
+            "Casey",
+            "'"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "t1",
+            ".",
+            "country",
+            "from",
+            "tv_channel",
+            "as",
+            "t1",
+            "join",
+            "cartoon",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "id",
+            "=",
+            "t2",
+            ".",
+            "channel",
+            "where",
+            "t2",
+            ".",
+            "written_by",
+            "=",
+            "value"
+        ],
+        "question": "What are the countries that have cartoons on TV that were written by Todd Casey?",
+        "question_toks": [
+            "What",
+            "are",
+            "the",
+            "countries",
+            "that",
+            "have",
+            "cartoons",
+            "on",
+            "TV",
+            "that",
+            "were",
+            "written",
+            "by",
+            "Todd",
+            "Casey",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        0
+                    ],
+                    [
+                        "table_unit",
+                        2
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                1,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            25,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                3,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            22,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Todd Casey\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "world_1",
+        "query": "SELECT T2.Language FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T1.HeadOfState  =  \"Beatrix\" AND T2.IsOfficial  =  \"T\"",
+        "query_toks": [
+            "SELECT",
+            "T2.Language",
+            "FROM",
+            "country",
+            "AS",
+            "T1",
+            "JOIN",
+            "countrylanguage",
+            "AS",
+            "T2",
+            "ON",
+            "T1.Code",
+            "=",
+            "T2.CountryCode",
+            "WHERE",
+            "T1.HeadOfState",
+            "=",
+            "``",
+            "Beatrix",
+            "''",
+            "AND",
+            "T2.IsOfficial",
+            "=",
+            "``",
+            "T",
+            "''"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "t2",
+            ".",
+            "language",
+            "from",
+            "country",
+            "as",
+            "t1",
+            "join",
+            "countrylanguage",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "code",
+            "=",
+            "t2",
+            ".",
+            "countrycode",
+            "where",
+            "t1",
+            ".",
+            "headofstate",
+            "=",
+            "value",
+            "and",
+            "t2",
+            ".",
+            "isofficial",
+            "=",
+            "value"
+        ],
+        "question": "What is the official language spoken in the country whose head of state is Beatrix?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "official",
+            "language",
+            "spoken",
+            "in",
+            "the",
+            "country",
+            "whose",
+            "head",
+            "of",
+            "state",
+            "is",
+            "Beatrix",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        2
+                    ],
+                    [
+                        "table_unit",
+                        3
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                8,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            23,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                24,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Beatrix\"",
+                    null
+                ],
+                "and",
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            25,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"T\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "world_1",
+        "query": "SELECT COUNT(*) FROM (SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"English\" INTERSECT SELECT T1.Name FROM country AS T1 JOIN countrylanguage AS T2 ON T1.Code  =  T2.CountryCode WHERE T2.Language  =  \"Dutch\")",
+        "query_toks": [
+            "SELECT",
+            "COUNT",
+            "(",
+            "*",
+            ")",
+            "FROM",
+            "(",
+            "SELECT",
+            "T1.Name",
+            "FROM",
+            "country",
+            "AS",
+            "T1",
+            "JOIN",
+            "countrylanguage",
+            "AS",
+            "T2",
+            "ON",
+            "T1.Code",
+            "=",
+            "T2.CountryCode",
+            "WHERE",
+            "T2.Language",
+            "=",
+            "``",
+            "English",
+            "''",
+            "INTERSECT",
+            "SELECT",
+            "T1.Name",
+            "FROM",
+            "country",
+            "AS",
+            "T1",
+            "JOIN",
+            "countrylanguage",
+            "AS",
+            "T2",
+            "ON",
+            "T1.Code",
+            "=",
+            "T2.CountryCode",
+            "WHERE",
+            "T2.Language",
+            "=",
+            "``",
+            "Dutch",
+            "''",
+            ")"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "count",
+            "(",
+            "*",
+            ")",
+            "from",
+            "(",
+            "select",
+            "t1",
+            ".",
+            "name",
+            "from",
+            "country",
+            "as",
+            "t1",
+            "join",
+            "countrylanguage",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "code",
+            "=",
+            "t2",
+            ".",
+            "countrycode",
+            "where",
+            "t2",
+            ".",
+            "language",
+            "=",
+            "value",
+            "intersect",
+            "select",
+            "t1",
+            ".",
+            "name",
+            "from",
+            "country",
+            "as",
+            "t1",
+            "join",
+            "countrylanguage",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "code",
+            "=",
+            "t2",
+            ".",
+            "countrycode",
+            "where",
+            "t2",
+            ".",
+            "language",
+            "=",
+            "value",
+            ")"
+        ],
+        "question": "What is the number of nations that use English and Dutch?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "number",
+            "of",
+            "nations",
+            "that",
+            "use",
+            "English",
+            "and",
+            "Dutch",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "sql",
+                        {
+                            "from": {
+                                "table_units": [
+                                    [
+                                        "table_unit",
+                                        2
+                                    ],
+                                    [
+                                        "table_unit",
+                                        3
+                                    ]
+                                ],
+                                "conds": [
+                                    [
+                                        false,
+                                        2,
+                                        [
+                                            0,
+                                            [
+                                                0,
+                                                8,
+                                                false
+                                            ],
+                                            null
+                                        ],
+                                        [
+                                            0,
+                                            23,
+                                            false
+                                        ],
+                                        null
+                                    ]
+                                ]
+                            },
+                            "select": [
+                                false,
+                                [
+                                    [
+                                        0,
+                                        [
+                                            0,
+                                            [
+                                                0,
+                                                9,
+                                                false
+                                            ],
+                                            null
+                                        ]
+                                    ]
+                                ]
+                            ],
+                            "where": [
+                                [
+                                    false,
+                                    2,
+                                    [
+                                        0,
+                                        [
+                                            0,
+                                            24,
+                                            false
+                                        ],
+                                        null
+                                    ],
+                                    "\"English\"",
+                                    null
+                                ]
+                            ],
+                            "groupBy": [],
+                            "having": [],
+                            "orderBy": [],
+                            "limit": null,
+                            "intersect": {
+                                "from": {
+                                    "table_units": [
+                                        [
+                                            "table_unit",
+                                            2
+                                        ],
+                                        [
+                                            "table_unit",
+                                            3
+                                        ]
+                                    ],
+                                    "conds": [
+                                        [
+                                            false,
+                                            2,
+                                            [
+                                                0,
+                                                [
+                                                    0,
+                                                    8,
+                                                    false
+                                                ],
+                                                null
+                                            ],
+                                            [
+                                                0,
+                                                23,
+                                                false
+                                            ],
+                                            null
+                                        ]
+                                    ]
+                                },
+                                "select": [
+                                    false,
+                                    [
+                                        [
+                                            0,
+                                            [
+                                                0,
+                                                [
+                                                    0,
+                                                    9,
+                                                    false
+                                                ],
+                                                null
+                                            ]
+                                        ]
+                                    ]
+                                ],
+                                "where": [
+                                    [
+                                        false,
+                                        2,
+                                        [
+                                            0,
+                                            [
+                                                0,
+                                                24,
+                                                false
+                                            ],
+                                            null
+                                        ],
+                                        "\"Dutch\"",
+                                        null
+                                    ]
+                                ],
+                                "groupBy": [],
+                                "having": [],
+                                "orderBy": [],
+                                "limit": null,
+                                "intersect": null,
+                                "union": null,
+                                "except": null
+                            },
+                            "union": null,
+                            "except": null
+                        }
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        3,
+                        [
+                            0,
+                            [
+                                0,
+                                0,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": null,
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "dog_kennels",
+        "query": "SELECT state FROM Owners INTERSECT SELECT state FROM Professionals",
+        "query_toks": [
+            "SELECT",
+            "state",
+            "FROM",
+            "Owners",
+            "INTERSECT",
+            "SELECT",
+            "state",
+            "FROM",
+            "Professionals"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "state",
+            "from",
+            "owners",
+            "intersect",
+            "select",
+            "state",
+            "from",
+            "professionals"
+        ],
+        "question": "Which states have both owners and professionals living there?",
+        "question_toks": [
+            "Which",
+            "states",
+            "have",
+            "both",
+            "owners",
+            "and",
+            "professionals",
+            "living",
+            "there",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        4
+                    ]
+                ],
+                "conds": []
+            },
+            "select": [
+                false,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                15,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            6
+                        ]
+                    ],
+                    "conds": []
+                },
+                "select": [
+                    false,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    38,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "union": null,
+            "except": null
+        }
+    },
+    {
+        "db_id": "student_transcripts_tracking",
+        "query": "SELECT DISTINCT T2.semester_id FROM Degree_Programs AS T1 JOIN Student_Enrolment AS T2 ON T1.degree_program_id  =  T2.degree_program_id WHERE degree_summary_name  =  'Master' INTERSECT SELECT DISTINCT T2.semester_id FROM Degree_Programs AS T1 JOIN Student_Enrolment AS T2 ON T1.degree_program_id  =  T2.degree_program_id WHERE degree_summary_name  =  'Bachelor'",
+        "query_toks": [
+            "SELECT",
+            "DISTINCT",
+            "T2.semester_id",
+            "FROM",
+            "Degree_Programs",
+            "AS",
+            "T1",
+            "JOIN",
+            "Student_Enrolment",
+            "AS",
+            "T2",
+            "ON",
+            "T1.degree_program_id",
+            "=",
+            "T2.degree_program_id",
+            "WHERE",
+            "degree_summary_name",
+            "=",
+            "'Master",
+            "'",
+            "INTERSECT",
+            "SELECT",
+            "DISTINCT",
+            "T2.semester_id",
+            "FROM",
+            "Degree_Programs",
+            "AS",
+            "T1",
+            "JOIN",
+            "Student_Enrolment",
+            "AS",
+            "T2",
+            "ON",
+            "T1.degree_program_id",
+            "=",
+            "T2.degree_program_id",
+            "WHERE",
+            "degree_summary_name",
+            "=",
+            "'Bachelor",
+            "'"
+        ],
+        "query_toks_no_value": [
+            "select",
+            "distinct",
+            "t2",
+            ".",
+            "semester_id",
+            "from",
+            "degree_programs",
+            "as",
+            "t1",
+            "join",
+            "student_enrolment",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "degree_program_id",
+            "=",
+            "t2",
+            ".",
+            "degree_program_id",
+            "where",
+            "degree_summary_name",
+            "=",
+            "value",
+            "intersect",
+            "select",
+            "distinct",
+            "t2",
+            ".",
+            "semester_id",
+            "from",
+            "degree_programs",
+            "as",
+            "t1",
+            "join",
+            "student_enrolment",
+            "as",
+            "t2",
+            "on",
+            "t1",
+            ".",
+            "degree_program_id",
+            "=",
+            "t2",
+            ".",
+            "degree_program_id",
+            "where",
+            "degree_summary_name",
+            "=",
+            "value"
+        ],
+        "question": "What is the id of the semester that had both Masters and Bachelors students enrolled?",
+        "question_toks": [
+            "What",
+            "is",
+            "the",
+            "id",
+            "of",
+            "the",
+            "semester",
+            "that",
+            "had",
+            "both",
+            "Masters",
+            "and",
+            "Bachelors",
+            "students",
+            "enrolled",
+            "?"
+        ],
+        "sql": {
+            "from": {
+                "table_units": [
+                    [
+                        "table_unit",
+                        3
+                    ],
+                    [
+                        "table_unit",
+                        7
+                    ]
+                ],
+                "conds": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                18,
+                                false
+                            ],
+                            null
+                        ],
+                        [
+                            0,
+                            45,
+                            false
+                        ],
+                        null
+                    ]
+                ]
+            },
+            "select": [
+                true,
+                [
+                    [
+                        0,
+                        [
+                            0,
+                            [
+                                0,
+                                46,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                ]
+            ],
+            "where": [
+                [
+                    false,
+                    2,
+                    [
+                        0,
+                        [
+                            0,
+                            20,
+                            false
+                        ],
+                        null
+                    ],
+                    "\"Master\"",
+                    null
+                ]
+            ],
+            "groupBy": [],
+            "having": [],
+            "orderBy": [],
+            "limit": null,
+            "intersect": {
+                "from": {
+                    "table_units": [
+                        [
+                            "table_unit",
+                            3
+                        ],
+                        [
+                            "table_unit",
+                            7
+                        ]
+                    ],
+                    "conds": [
+                        [
+                            false,
+                            2,
+                            [
+                                0,
+                                [
+                                    0,
+                                    18,
+                                    false
+                                ],
+                                null
+                            ],
+                            [
+                                0,
+                                45,
+                                false
+                            ],
+                            null
+                        ]
+                    ]
+                },
+                "select": [
+                    true,
+                    [
+                        [
+                            0,
+                            [
+                                0,
+                                [
+                                    0,
+                                    46,
+                                    false
+                                ],
+                                null
+                            ]
+                        ]
+                    ]
+                ],
+                "where": [
+                    [
+                        false,
+                        2,
+                        [
+                            0,
+                            [
+                                0,
+                                20,
+                                false
+                            ],
+                            null
+                        ],
+                        "\"Bachelor\"",
+                        null
+                    ]
+                ],
+                "groupBy": [],
+                "having": [],
+                "orderBy": [],
+                "limit": null,
+                "intersect": null,
+                "union": null,
+                "except": null
+            },
+            "union": null,
+            "except": null
+        }
+    }
+]
